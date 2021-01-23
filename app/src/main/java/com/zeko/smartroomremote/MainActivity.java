@@ -29,16 +29,18 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
+    // V prihodnosti bo določeno v nastavitvah
     final String url = "http://smartroomcore:5000/api";
-
+    // Ločena nit za omrežne procese, ki se izvajajo v rednem intervalu (pridobivanje temperature in vlage...)
     Timer routineTask = new Timer();
-    RequestQueue requestQueue;
+    // Čakalna vrsta za HTTP zahteve
+    //RequestQueue requestQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        // Inicializacija View elementov
         TextView temp = findViewById(R.id.tempView);
         TextView hum = findViewById(R.id.humView);
         SeekBar light = findViewById(R.id.seekBar);
@@ -123,14 +125,16 @@ public class MainActivity extends AppCompatActivity {
                         error.printStackTrace();
                         Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                     }
-                }) {
+                });
+                        //Mogoča rešitev za Flask. Mogoče potrebuje header-je, ki jih Volley privzeto ne posreduje
+                        /*{
                     @Override
                     public Map<String, String> getHeaders() throws AuthFailureError {
                         HashMap<String, String> headers = new HashMap<String, String>();
                         headers.put("Content-Type", "application/json; charset=utf-8");
                         return headers;
                     }
-                };
+                }*/
 
                 requestQueue.add(jsonObjectRequest);
 
