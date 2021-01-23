@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SmartRoom Remote</string>
+    <string name="temperatura_in_vlaga">Temperatura in vlaga</string>
+    <string name="_24_c">null</string>
+    <string name="_48">null</string>
+    <string name="stropna_lu">Stropna luč</string>
+    <string name="intruder_mode">intruder mode</string>
+    <string name="party_mode">party mode</string>
+    <string name="dogodki">Dogodki</string>
+</resources>
