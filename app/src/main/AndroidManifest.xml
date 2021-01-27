@@ -14,7 +14,8 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".Settings"
-            android:label="@string/title_activity_settings"></activity>
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".MainActivity"></activity>
         <!-- Omogoča aplikaciji, da uporablja HTTP namesto HTTPS -->
         <activity android:name=".MainActivity">
             <intent-filter>
